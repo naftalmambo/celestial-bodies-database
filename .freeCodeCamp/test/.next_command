@@ -954,3 +954,5 @@ psql -U postgres < universe.sql
 sudo service postgresql start
 pg_dump --clean --create --username=freecodecamp --dbname=universe > universe.sql
 git add .
+git commit -m "feat: link authentic sql database structures"
+git push -u origin main --force
