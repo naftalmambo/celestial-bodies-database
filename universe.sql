@@ -265,77 +265,87 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: constellation; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.constellation VALUES (1, 'Orion', 7);
-INSERT INTO public.constellation VALUES (2, 'Ursa Major', 7);
-INSERT INTO public.constellation VALUES (3, 'Cassiopeia', 5);
+COPY public.constellation (constellation_id, name, number_of_stars) FROM stdin;
+1	Orion	7
+2	Ursa Major	7
+3	Cassiopeia	5
+\.
 
 
 --
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.galaxy VALUES (1, 'Milky Way', 'Spiral', 13600, 0);
-INSERT INTO public.galaxy VALUES (2, 'Andromeda', 'Spiral', 10000, 2);
-INSERT INTO public.galaxy VALUES (3, 'Triangulum', 'Spiral', 12000, 3);
-INSERT INTO public.galaxy VALUES (5, 'Centaurus', 'Elliptical', 11000, 11);
-INSERT INTO public.galaxy VALUES (6, 'Whirlpool', 'Spiral', 13000, 23);
-INSERT INTO public.galaxy VALUES (4, 'Sombrero', 'Lenticular', 13200, 8);
+COPY public.galaxy (galaxy_id, name, galaxy_type, age_in_millions_of_years, distance_from_earth) FROM stdin;
+1	Milky Way	Spiral	13600	0
+2	Andromeda	Spiral	10000	2
+3	Triangulum	Spiral	12000	3
+5	Centaurus	Elliptical	11000	11
+6	Whirlpool	Spiral	13000	23
+4	Sombrero	Lenticular	13200	8
+\.
 
 
 --
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.moon VALUES (1, 'Luna', 384400.0, 3, 1737);
-INSERT INTO public.moon VALUES (2, 'Phobos', 9377.0, 4, 11);
-INSERT INTO public.moon VALUES (3, 'Deimos', 23460.0, 4, 6);
-INSERT INTO public.moon VALUES (4, 'Io', 421700.0, 5, 1821);
-INSERT INTO public.moon VALUES (5, 'Europa', 670900.0, 5, 1560);
-INSERT INTO public.moon VALUES (6, 'Ganymede', 1070400.0, 5, 2634);
-INSERT INTO public.moon VALUES (7, 'Callisto', 1882700.0, 5, 2410);
-INSERT INTO public.moon VALUES (8, 'Amalthea', 181400.0, 5, 83);
-INSERT INTO public.moon VALUES (9, 'Himalia', 11461000.0, 5, 85);
-INSERT INTO public.moon VALUES (10, 'Elara', 11741000.0, 5, 43);
-INSERT INTO public.moon VALUES (11, 'Mimas', 185539.0, 6, 198);
-INSERT INTO public.moon VALUES (12, 'Enceladus', 237948.0, 6, 252);
-INSERT INTO public.moon VALUES (13, 'Tethys', 294619.0, 6, 531);
-INSERT INTO public.moon VALUES (14, 'Dione', 377396.0, 6, 561);
-INSERT INTO public.moon VALUES (15, 'Rhea', 527108.0, 6, 764);
-INSERT INTO public.moon VALUES (16, 'Titan', 1221870.0, 6, 2575);
-INSERT INTO public.moon VALUES (17, 'Ariel', 191020.0, 7, 578);
-INSERT INTO public.moon VALUES (18, 'Umbriel', 265970.0, 7, 584);
-INSERT INTO public.moon VALUES (19, 'Triton', 354759.0, 8, 1353);
-INSERT INTO public.moon VALUES (20, 'Sirius Moon', 150000.0, 9, 450);
+COPY public.moon (moon_id, name, distance_from_planet_km, planet_id, radius_km) FROM stdin;
+1	Luna	384400.0	3	1737
+2	Phobos	9377.0	4	11
+3	Deimos	23460.0	4	6
+4	Io	421700.0	5	1821
+5	Europa	670900.0	5	1560
+6	Ganymede	1070400.0	5	2634
+7	Callisto	1882700.0	5	2410
+8	Amalthea	181400.0	5	83
+9	Himalia	11461000.0	5	85
+10	Elara	11741000.0	5	43
+11	Mimas	185539.0	6	198
+12	Enceladus	237948.0	6	252
+13	Tethys	294619.0	6	531
+14	Dione	377396.0	6	561
+15	Rhea	527108.0	6	764
+16	Titan	1221870.0	6	2575
+17	Ariel	191020.0	7	578
+18	Umbriel	265970.0	7	584
+19	Triton	354759.0	8	1353
+20	Sirius Moon	150000.0	9	450
+\.
 
 
 --
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.planet VALUES (1, 'Mercury', false, 'Terrestrial', 1);
-INSERT INTO public.planet VALUES (2, 'Venus', false, 'Terrestrial', 1);
-INSERT INTO public.planet VALUES (3, 'Earth', true, 'Terrestrial', 1);
-INSERT INTO public.planet VALUES (4, 'Mars', false, 'Terrestrial', 1);
-INSERT INTO public.planet VALUES (5, 'Jupiter', false, 'Gas Giant', 1);
-INSERT INTO public.planet VALUES (6, 'Saturn', false, 'Gas Giant', 1);
-INSERT INTO public.planet VALUES (7, 'Uranus', false, 'Ice Giant', 1);
-INSERT INTO public.planet VALUES (8, 'Neptune', false, 'Ice Giant', 1);
-INSERT INTO public.planet VALUES (9, 'Sirius b1', false, 'Exoplanet', 2);
-INSERT INTO public.planet VALUES (10, 'Andromeda Prime', true, 'Super Earth', 3);
-INSERT INTO public.planet VALUES (11, 'Mirach-b', false, 'Hot Jupiter', 4);
-INSERT INTO public.planet VALUES (12, 'Triangulum Prime', false, 'Chthonian', 5);
+COPY public.planet (planet_id, name, has_life, planet_types, star_id) FROM stdin;
+1	Mercury	f	Terrestrial	1
+2	Venus	f	Terrestrial	1
+3	Earth	t	Terrestrial	1
+4	Mars	f	Terrestrial	1
+5	Jupiter	f	Gas Giant	1
+6	Saturn	f	Gas Giant	1
+7	Uranus	f	Ice Giant	1
+8	Neptune	f	Ice Giant	1
+9	Sirius b1	f	Exoplanet	2
+10	Andromeda Prime	t	Super Earth	3
+11	Mirach-b	f	Hot Jupiter	4
+12	Triangulum Prime	f	Chthonian	5
+\.
 
 
 --
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.star VALUES (1, 'Sun', true, 'The center star of our home solar system.', 1);
-INSERT INTO public.star VALUES (2, 'Sirius', false, 'The brightest star visible in our night sky.', 1);
-INSERT INTO public.star VALUES (3, 'Alpheratz', true, 'A bright binary star system.', 2);
-INSERT INTO public.star VALUES (4, 'Mirach', false, 'A massive red giant star profile.', 2);
-INSERT INTO public.star VALUES (5, 'M33-X7', true, 'A high-mass stellar black hole host star.', 3);
-INSERT INTO public.star VALUES (6, 'Rigel', true, 'A blue supergiant star anchor.', 1);
+COPY public.star (star_id, name, has_planets, description, galaxy_id) FROM stdin;
+1	Sun	t	The center star of our home solar system.	1
+2	Sirius	f	The brightest star visible in our night sky.	1
+3	Alpheratz	t	A bright binary star system.	2
+4	Mirach	f	A massive red giant star profile.	2
+5	M33-X7	t	A high-mass stellar black hole host star.	3
+6	Rigel	t	A blue supergiant star anchor.	1
+\.
 
 
 --
