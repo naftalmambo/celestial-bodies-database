@@ -33,7 +33,7 @@ Users should be able to:
 - Map out clear data constraints using Primary Keys, Foreign Keys, Unique attributes, and specific variable scopes
 - Run successful multi-table entity join queries from a Linux CLI terminal container matching real-world schema states
 
-### Screenshots
+### Screenshot
 
 |             Schema Grid View             | CLI Query View 1 | CLI Query View 2 |
 | :--------------------------------------: | :--------------: | :--------------: |
@@ -107,7 +107,6 @@ COPY public.star (star_id, name, has_planets, description, galaxy_id) FROM stdin
 1	Sun	t	The center star of our home solar system.	1
 2	Sirius	f	The brightest star visible in our night sky.	1
 3	Alpheratz	t	A bright binary star system.	2
-\.
 ```
 
 ### Continued development
