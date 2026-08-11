@@ -14,7 +14,7 @@ A relational database project tracking interstellar entities across a deep-space
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-  - [How to Run the Project Locally](#how to-run-the-project-locally)
+  - [How to Run the Project Locally](#how-to-run-the-project-locally)
   - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -43,6 +43,43 @@ Users should be able to:
 
 - Solution URL: [GitHub Repository](https://github.com/naftalmambo/celestial-bodies-database)
 - Live Site URL: [Live Project Terminal Dump](https://raw.githubusercontent.com/naftalmambo/celestial-bodies-database/refs/heads/main/universe.sql)
+
+## How to Run the Project Locally
+
+Follow these simple steps to set up this database on your computer:
+
+### 1. What You Need
+
+Make sure you have **PostgreSQL** and **Git** installed on your machine.
+
+### 2. Clone the Project
+
+Open your terminal and run these commands to download the project files:
+
+```bash
+git clone https://github.com
+cd celestial-bodies-database
+```
+
+### 3. Rebuild the Database
+
+Run these commands to create the database and load all my tables and data from the backup file:
+
+```bash
+# Create an empty database named universe
+psql -U freecodecamp -d postgres -c "CREATE DATABASE universe;"
+
+# Restore the database using my universe.sql file
+psql -U freecodecamp -d universe < universe.sql
+```
+
+### 4. Check the Data
+
+To open the PostgreSQL terminal and test queries yourself, run:
+
+```bash
+psql -U freecodecamp -d universe
+```
 
 ## My process
 
