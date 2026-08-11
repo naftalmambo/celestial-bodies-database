@@ -155,9 +155,9 @@ Throughout this project, I used an AI-collaborative workflow to:
 
 ## Open for Opportunities & Collaboration
 
-This project marks the beginning of my journey toward becoming a professional Web Developer and ultimately a Java Full-Stack Engineer [1.1]. I am currently:
+This project is part of my journey toward becoming a professional Web Developer and ultimately a Java Full-Stack Engineer. I am currently:
 
-- 🔭 **Open for work:** Looking for junior roles or freelance opportunities where I can apply my skills in Java Core Logic, SQL Relational Structures, and Backend Engineering [1.1].
+- 🔭 **Open for work:** Looking for junior roles or freelance opportunities where I can apply my skills in Java Core Logic, SQL Relational Structures, and Backend Engineering.
 - 🤝 **Open to contribute:** Interested in collaborating on open-source projects or team-based infrastructure tasks.
 
 If you like what you see or have a backend/operations system you need help with, connect with:
