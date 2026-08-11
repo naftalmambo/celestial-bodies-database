@@ -127,9 +127,9 @@ If you like what you see or have a backend/operations system you need help with,
 
 **Author**
 
-- LinkedIn - [Naftal Mambo](https://www.linkedin.com/in/naftalmambo/)
-- GitHub - [@naftalmambo](https://github.com/naftalmambo)
-- Discord - [devMambo](https://discordapp.com/users/1157321092482994246)
+- [ 💼 LinkedIn](https://www.linkedin.com/in/naftalmambo/)
+- [ 💻 GitHub](https://github.com/naftalmambo)
+- [ 💬 Discord](https://discordapp.com/users/1157321092482994246)
 
 ## Acknowledgments
 
