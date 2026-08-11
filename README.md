@@ -57,7 +57,7 @@ Make sure you have **PostgreSQL** and **Git** installed on your machine.
 Open your terminal and run these commands to download the project files:
 
 ```bash
-git clone https://github.com
+git clone https://github.com/naftalmambo/celestial-bodies-database
 cd celestial-bodies-database
 ```
 
