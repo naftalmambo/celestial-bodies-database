@@ -14,7 +14,7 @@ A PostgreSQL database project tracking interstellar entities for the **freeCodeC
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-  - [Features](features)
+  - [Features](#features)
   - [How to Run the Project Locally](#how-to-run-the-project-locally)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -54,14 +54,41 @@ Users should be able to:
 
 Follow these simple steps to set up this database on your computer:
 
-1.  **What You Need:** Install PostgreSQL and Git.
-2.  **Clone the Project:** `git clone https://github.com/naftalmambo/celestial-bodies-database`
+1.  **What You Need:**
+    Make sure you have **PostgreSQL** and **Git** installed on your machine so you can run terminal command-line operations.
+
+2.  **Clone the Project:**
+
+Open your terminal and run these commands to download the project repository files:
+
+```bash
+git clone https://github.com/naftalmambo/celestial-bodies-database
+cd celestial-bodies-database
+```
+
 3.  **Rebuild the Database:**
-    ```bash
-    psql -U freecodecamp -d postgres -c "CREATE DATABASE universe;"
-    psql -U freecodecamp -d universe < universe.sql
-    ```
-4.  **Check the Data:** `psql -U freecodecamp -d universe`
+
+Run these commands to build your blank system shell container and instantly restore all relational tables from the raw script backup file.
+
+_(Note: We use the inline `PGPASSWORD` prefix here so your terminal automatically inputs the password, preventing peer authentication connection failures)._
+
+```bash
+# Create an empty database container named universe
+PGPASSWORD='mambo' psql -U naftal -h localhost -d postgres -c "CREATE DATABASE universe;"
+
+# Restore the complete schema layout and data rows instantly
+PGPASSWORD='mambo' psql -U naftal -h localhost -d universe < universe.sql
+```
+
+4.  **Check the Data**
+
+Connect directly to your newly restored interactive database shell to execute queries:
+
+```bash
+PGPASSWORD='mambo' psql -U naftal -h localhost -d universe
+```
+
+_(Once inside, you will see the `universe=#` prompt. Type `\d` to view all your tables, or run any SQL queries. Type `\q` to exit back to your normal terminal)._
 
 ### Built with:
 
@@ -111,6 +138,7 @@ COPY public.star (star_id, name, has_planets, description, galaxy_id) FROM stdin
 1	Sun	t	The center star of our home solar system.	1
 2	Sirius	f	The brightest star visible in our night sky.	1
 3	Alpheratz	t	A bright binary star system.	2
+\.
 ```
 
 ### Continued development
