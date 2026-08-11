@@ -1,6 +1,6 @@
 # Celestial Bodies Database 🌌
 
-A relational database project tracking interstellar entities across a deep-space grid. This project fulfills the core backend data requirements for the **freeCodeCamp Relational Database Certification**.
+A PostgreSQL database project tracking interstellar entities for the **freeCodeCamp Relational Database Certification**.
 
 ### Design preview for the Celestial Bodies Database Certification Project.
 
@@ -85,13 +85,10 @@ psql -U freecodecamp -d universe
 
 ### Built with
 
-- **Relational Database Design Engine**
-- **PostgreSQL Engine**
-- **Structured Query Language (SQL)**
-- **CLI Shell Script Pipeline Workflow**
-- **VS Code** - My primary editor for writing clean, structured migration scripts.
-- **Linux (Ubuntu/WSL/Docker)** - My development environment for a professional, stable system architecture.
-- **Windows Command Prompt (psql Client)** - Used for cross-environment verification to ensure data integrity.
+- **PostgreSQL Database Engine** - Used to store, index, and organize interstellar data profiles.
+- **Structured Query Language (SQL)** - Used to write relation schema logic, constraints, and constraints trees.
+- **VS Code** - My primary text editor for managing configuration scripts and documentation.
+- **Linux (Xubuntu via VirtualBox)** - My development environment for running the native project console.
 
 ### What I learned from this work
 
