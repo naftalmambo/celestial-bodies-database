@@ -14,8 +14,8 @@ A PostgreSQL database project tracking interstellar entities for the **freeCodeC
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
+  - [Features](features)
   - [How to Run the Project Locally](#how-to-run-the-project-locally)
-  - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
@@ -44,7 +44,13 @@ Users should be able to:
 - Solution URL: [GitHub Repository](https://github.com/naftalmambo/celestial-bodies-database)
 - Live Site URL: [Live Project Terminal Dump](https://raw.githubusercontent.com/naftalmambo/celestial-bodies-database/refs/heads/main/universe.sql)
 
-## How to Run the Project Locally
+### Features
+
+- **5 Distinct Relational Tables:** Fully normalized database tree setup spanning constellations, galaxies, stars, planets, and moons.
+- **Proper Primary/Foreign Key Constraints:** Solid relational connections enforcing tight data validation constraints.
+- **Linux CLI-Based Interaction:** Built entirely using native terminal scripts and managed straight from the command line.
+
+### How to Run the Project Locally
 
 Follow these simple steps to set up this database on your computer:
 
@@ -57,9 +63,7 @@ Follow these simple steps to set up this database on your computer:
     ```
 4.  **Check the Data:** `psql -U freecodecamp -d universe`
 
-## My process
-
-### Built with
+### Built with:
 
 - **PostgreSQL Database Engine** - Used to store, index, and organize interstellar data profiles.
 - **Structured Query Language (SQL)** - Used to write relation schema logic, constraints, and constraints trees.
