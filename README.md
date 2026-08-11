@@ -14,14 +14,14 @@ A relational database project tracking interstellar entities across a deep-space
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
+  - [How to Run the Project Locally](#how to-run-the-project-locally)
+  - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [AI Collaboration](#ai-collaboration)
 - [Open for Opportunities & Collaboration](#open-for-opportunities--collaboration)
 - [Acknowledgments](#acknowledgments)
-- [Credits](#credits)
 
 ## Overview
 
