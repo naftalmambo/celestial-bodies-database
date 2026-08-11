@@ -48,38 +48,14 @@ Users should be able to:
 
 Follow these simple steps to set up this database on your computer:
 
-### 1. What You Need
-
-Make sure you have **PostgreSQL** and **Git** installed on your machine.
-
-### 2. Clone the Project
-
-Open your terminal and run these commands to download the project files:
-
-```bash
-git clone https://github.com/naftalmambo/celestial-bodies-database
-cd celestial-bodies-database
-```
-
-### 3. Rebuild the Database
-
-Run these commands to create the database and load all my tables and data from the backup file:
-
-```bash
-# Create an empty database named universe
-psql -U freecodecamp -d postgres -c "CREATE DATABASE universe;"
-
-# Restore the database using my universe.sql file
-psql -U freecodecamp -d universe < universe.sql
-```
-
-### 4. Check the Data
-
-To open the PostgreSQL terminal and test queries yourself, run:
-
-```bash
-psql -U freecodecamp -d universe
-```
+1.  **What You Need:** Install PostgreSQL and Git.
+2.  **Clone the Project:** `git clone https://github.com/naftalmambo/celestial-bodies-database`
+3.  **Rebuild the Database:**
+    ```bash
+    psql -U freecodecamp -d postgres -c "CREATE DATABASE universe;"
+    psql -U freecodecamp -d universe < universe.sql
+    ```
+4.  **Check the Data:** `psql -U freecodecamp -d universe`
 
 ## My process
 
@@ -92,11 +68,11 @@ psql -U freecodecamp -d universe
 
 ### What I learned from this work
 
-This project was a major milestone in my journey toward mastering responsive database storage frameworks and server-side data control. Here are the key technical concepts I mastered using my exact database schema:
+This project helped me understand how databases work behind the scenes. Here are the main things I learned while building this schema:
 
-#### **1. Constructing Relational Tables with Data Type Specifications**
+#### **1. Creating Tables with the Right Data Types**
 
-I learned how to structure tables professionally with strict constraints using character lengths and specific type rules. In my actual file, I configured the core tables like `star` using explicit `integer`, `text`, and variable character parameters to manage data sizes.
+I learned how to set up columns with specific rules so the database only accepts the correct information. For example, I used `integer` for IDs, `text` for long descriptions, and `character varying(50)` to limit name lengths. I also added `NOT NULL` so important fields cannot be left empty.
 
 ```sql
 CREATE TABLE public.star (
@@ -108,23 +84,23 @@ CREATE TABLE public.star (
 );
 ```
 
-#### **2. Enforcing Relational Constraints Post-Creation**
+#### **2. Linking Tables and Adding Security Rules**
 
-I learned that PostgreSQL dump engines separate the initial table construction from database security layers. I mastered how to use `ALTER TABLE ONLY` commands to append Primary Keys, Unique constraints, and Foreign Key relations to columns like `galaxy_id` after the structures exist.
+I learned how to connect different tables together using Foreign Keys so that a star always belongs to a galaxy. I also learned how to use `ALTER TABLE` to add `UNIQUE` rules, which stops the database from accidentally creating two things with the exact same name.
 
 ```sql
--- Enforcing Data Uniqueness on the Name column
+-- Making sure two stars cannot have the same name
 ALTER TABLE ONLY public.star
     ADD CONSTRAINT star_name_key UNIQUE (name);
 
--- Linking the Foreign Key from the Star table back to the Galaxy table
+-- Connecting the star table to the galaxy table
 ALTER TABLE ONLY public.star
     ADD CONSTRAINT star_galaxy_id_fkey FOREIGN KEY (galaxy_id) REFERENCES public.galaxy(galaxy_id);
 ```
 
-#### **3. High-Velocity Data Ingestion via Terminal Streams**
+#### **3. Adding Lots of Data quickly with COPY**
 
-I learned how to use the raw `COPY FROM stdin` tool to feed complex datasets into my relational architecture instantly. Instead of using dozens of single row insertion loops, this allows seamless seeding of systems like _Sun_, _Sirius_, and _Alpheratz_ along with their boolean metrics (`t`/`f`).
+Instead of typing out separate `INSERT INTO` commands for every single row, I learned how to use `COPY FROM stdin`. This is a much faster way to load a big block of rows (like my star data for the Sun, Sirius, and Alpheratz) directly into the database at once.
 
 ```sql
 COPY public.star (star_id, name, has_planets, description, galaxy_id) FROM stdin;
